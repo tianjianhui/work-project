@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-test-four</title>
+	<script src="vue.js" type="text/javascript"></script>
+	<style type="text/css">
+		.component-fade-enter-active, .component-fade-leave-active {
+		  transition: opacity .3s ease;
+		}
+		.component-fade-enter, .component-fade-leave-to
+		/* .component-fade-leave-active for below version 2.1.8 */ {
+		  opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div id="vueFour">
+		<input type="radio" value="view-one" v-model="picked">
+		<label for="view-one">view-one</label>
+		<input type="radio" value="view-two" v-model="picked">
+		<label for="view-two">view-two</label>
+		<transition name="component-fade" mode="out-in">
+		  <component v-bind:is="picked"></component>
+		</transition>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+		  el: '#vueFour',
+		  data: {
+		    picked: 'view-one'
+		  },
+		  components: {
+		    'view-one': {
+		      template: '<div>Component One</div>'
+		    },
+		    'view-two': {
+		      template: '<div>Component Two</div>'
+		    }
+		  }
+		})
+	</script>
+</body>
+</html>
