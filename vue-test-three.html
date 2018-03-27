@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-test-three</title>
+	<script type="text/javascript" src="vue.js"></script>
+	<style type="text/css" media="screen">
+		
+	</style>
+</head>
+<body>
+	<div id="vueThree">
+		<input type="label" name="a">A
+		<input type="label" name="b">B
+		<button @click="show=!show">toggle</button>
+		<transition>
+			<p>hello world</p>
+		</transition>
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			el:'#vueThree',
+			data:{
+				show:true
+			},
+
+		})
+	</script>
+</body>
+</html>
